@@ -18,14 +18,19 @@
         <a href="LogIn.aspx">Log In</a>
         <br />
         <br />
-        <asp:SqlDataSource ID="sql_HW7" runat="server" ConnectionString="<%$ ConnectionStrings:msci3300_g7ConnectionString %>" SelectCommand="SELECT [GuitarModel], [GuitarBrand], [UsedBy], [Price], [YearIntroduced] FROM [vpizzo_HW7]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sql_HW7" runat="server" ConnectionString="<%$ ConnectionStrings:msci3300_g7ConnectionString %>" SelectCommand="SELECT [GuitarModel], [GuitarBrand], [UsedBy], [Price], [YearIntroduced], [BodyMaterial], [NeckMaterial], [Pickups], [BodyStyle] FROM [vpizzo_HW7]"></asp:SqlDataSource>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="sql_HW7">
             <Columns>
-                <asp:BoundField DataField="GuitarModel" HeaderText="GuitarModel" SortExpression="GuitarModel" />
-                <asp:BoundField DataField="GuitarBrand" HeaderText="GuitarBrand" SortExpression="GuitarBrand" />
-                <asp:BoundField DataField="UsedBy" HeaderText="UsedBy" SortExpression="UsedBy" />
+                <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="GuitarModel" HeaderText="Model" SortExpression="GuitarModel" />
+                <asp:BoundField DataField="GuitarBrand" HeaderText="Brand" SortExpression="GuitarBrand" />
+                <asp:BoundField DataField="UsedBy" HeaderText="Used By" SortExpression="UsedBy" />
                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                <asp:BoundField DataField="YearIntroduced" HeaderText="YearIntroduced" SortExpression="YearIntroduced" />
+                <asp:BoundField DataField="YearIntroduced" HeaderText="Year Introduced" SortExpression="YearIntroduced" />
+                <asp:BoundField DataField="BodyMaterial" HeaderText="Body Material" SortExpression="BodyMaterial" />
+                <asp:BoundField DataField="NeckMaterial" HeaderText="Neck Material" SortExpression="NeckMaterial" />
+                <asp:BoundField DataField="Pickups" HeaderText="Pickups" SortExpression="Pickups" />
+                <asp:BoundField DataField="BodyStyle" HeaderText="BodyStyle" SortExpression="BodyStyle" />
             </Columns>
         </asp:GridView>
     </div>
