@@ -13,13 +13,11 @@
     <form id="form1" runat="server">
            <div class="center">
         <div class="header1">
-            <br />
-                Wicked Easy Recipes!
+           
+                <h1>Famous Guitars from Rock History</h1>
 
         </div>
-                With 5 Ingedients or Less!
-        <br />
-        <br />
+ 
                <a href="Default.aspx">Home</a>&nbsp; |&nbsp; 
         <a href="Search.aspx">Search</a>&nbsp; |&nbsp; 
         <a href="AboutUs.aspx">About Us</a>&nbsp; |&nbsp; 
