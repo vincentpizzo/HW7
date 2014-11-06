@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Guitar Details</title>
+        <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,24 +19,25 @@
         <a href="LogIn.aspx">Log In</a>
             <br />
             <br />
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_vpizzo_HW7 %>" SelectCommand="SELECT * FROM [vpizzo_HW7] WHERE ([GuitarID] = @GuitarID)">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="GuitarID" QueryStringField="GuitarID" Type="Int32" />
-                </SelectParameters>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_vpizzo_HW7 %>" SelectCommand="SELECT [GuitarModel], [GuitarBrand], [YearIntroduced], [Price], [UsedBy], [BodyMaterial], [NeckMaterial], [BodyStyle] FROM [vpizzo_HW7]">
             </asp:SqlDataSource>
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="GuitarID" DataSourceID="SqlDataSource1" Height="50px" Width="125px">
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="50px" Width="125px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+                <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                 <Fields>
-                    <asp:BoundField DataField="GuitarModel" HeaderText="Model" SortExpression="GuitarModel" />
-                    <asp:BoundField DataField="GuitarBrand" HeaderText="Brand" SortExpression="GuitarBrand" />
-                    <asp:BoundField DataField="YearIntroduced" HeaderText="Year Introduced" SortExpression="YearIntroduced" />
+                    <asp:BoundField DataField="GuitarModel" HeaderText="GuitarModel" SortExpression="GuitarModel" />
+                    <asp:BoundField DataField="GuitarBrand" HeaderText="GuitarBrand" SortExpression="GuitarBrand" />
+                    <asp:BoundField DataField="YearIntroduced" HeaderText="YearIntroduced" SortExpression="YearIntroduced" />
                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                    <asp:BoundField DataField="UsedBy" HeaderText="Used By" SortExpression="UsedBy" />
-                    <asp:BoundField DataField="BodyMaterial" HeaderText="Body Material" SortExpression="BodyMaterial" />
-                    <asp:BoundField DataField="NeckMaterial" HeaderText="Neck Material" SortExpression="NeckMaterial" />
-                    <asp:BoundField DataField="Pickups" HeaderText="Pickups" SortExpression="Pickups" />
-                    <asp:BoundField DataField="BodyStyle" HeaderText="Body Style" SortExpression="BodyStyle" />
+                    <asp:BoundField DataField="UsedBy" HeaderText="UsedBy" SortExpression="UsedBy" />
+                    <asp:BoundField DataField="BodyMaterial" HeaderText="BodyMaterial" SortExpression="BodyMaterial" />
+                    <asp:BoundField DataField="NeckMaterial" HeaderText="NeckMaterial" SortExpression="NeckMaterial" />
+                    <asp:BoundField DataField="BodyStyle" HeaderText="BodyStyle" SortExpression="BodyStyle" />
                 </Fields>
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
             </asp:DetailsView>
     </div>
     </form>
