@@ -36,7 +36,7 @@ a:visited { text-align: center;
           bottom: 0;
 }
 
-#right-header { align-content: right;
+#right-header { align-items: right;
 
 }
 
@@ -47,9 +47,8 @@ li {display: inline;
 
 ul {background: gray;
     text-align: center;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 400px;
+    margin-right: 400px;
     padding: 5px;
     border-radius: 20px;
-
 }
