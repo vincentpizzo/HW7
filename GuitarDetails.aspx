@@ -32,6 +32,7 @@
                     <asp:BoundField DataField="Pickups" HeaderText="Pickups" SortExpression="Pickups" />
                     <asp:BoundField DataField="BodyStyle" HeaderText="Body Style" SortExpression="BodyStyle" />
                 </Fields>
+                <PagerStyle BorderColor="Pink" />
             </asp:DetailsView>
     </div>
 
