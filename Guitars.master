@@ -23,7 +23,7 @@
 
         <div id="menu">
             <ul id="nav">
-                <li><a href="Default.aspx">Home</a>&nbsp; |&nbsp; </li>
+                <li><a href="ViewAll.aspx">Home</a>&nbsp; |&nbsp; </li>
                 <li><a href="Search.aspx">Search</a>&nbsp; |&nbsp; </li>
                 <li><a href="AboutUs.aspx">About Us</a>&nbsp; |&nbsp; </li>
                 <li><a href="ContactUs.aspx">Contact Us</a>&nbsp; |&nbsp; </li>

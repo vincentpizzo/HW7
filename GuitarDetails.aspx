@@ -8,17 +8,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Guitar Details</title>
-        <link href="css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 </head>
 <body>
-    <form id="form1" runat="server">
+ 
     <div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_vpizzo_HW7 %>" SelectCommand="SELECT [GuitarModel], [GuitarBrand], [YearIntroduced], [Price], [UsedBy], [BodyMaterial], [NeckMaterial], [BodyStyle] FROM [vpizzo_HW7]">
+            <asp:SqlDataSource ID="sql_GuitarData" runat="server" ConnectionString="<%$ ConnectionStrings:db_vpizzo_HW7 %>" SelectCommand="SELECT * FROM [vpizzo_HW7]" DeleteCommand="DELETE FROM [vpizzo_HW7] WHERE [GuitarID] = @GuitarID" InsertCommand="INSERT INTO [vpizzo_HW7] ([GuitarModel], [GuitarBrand], [YearIntroduced], [Price], [UsedBy], [BodyMaterial], [NeckMaterial], [Pickups], [BodyStyle]) VALUES (@GuitarModel, @GuitarBrand, @YearIntroduced, @Price, @UsedBy, @BodyMaterial, @NeckMaterial, @Pickups, @BodyStyle)" UpdateCommand="UPDATE [vpizzo_HW7] SET [GuitarModel] = @GuitarModel, [GuitarBrand] = @GuitarBrand, [YearIntroduced] = @YearIntroduced, [Price] = @Price, [UsedBy] = @UsedBy, [BodyMaterial] = @BodyMaterial, [NeckMaterial] = @NeckMaterial, [Pickups] = @Pickups, [BodyStyle] = @BodyStyle WHERE [GuitarID] = @GuitarID">
+                <DeleteParameters>
+                    <asp:Parameter Name="GuitarID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="GuitarModel" Type="String" />
+                    <asp:Parameter Name="GuitarBrand" Type="String" />
+                    <asp:Parameter Name="YearIntroduced" Type="Int32" />
+                    <asp:Parameter Name="Price" Type="Int32" />
+                    <asp:Parameter Name="UsedBy" Type="String" />
+                    <asp:Parameter Name="BodyMaterial" Type="String" />
+                    <asp:Parameter Name="NeckMaterial" Type="String" />
+                    <asp:Parameter Name="Pickups" Type="String" />
+                    <asp:Parameter Name="BodyStyle" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="GuitarModel" Type="String" />
+                    <asp:Parameter Name="GuitarBrand" Type="String" />
+                    <asp:Parameter Name="YearIntroduced" Type="Int32" />
+                    <asp:Parameter Name="Price" Type="Int32" />
+                    <asp:Parameter Name="UsedBy" Type="String" />
+                    <asp:Parameter Name="BodyMaterial" Type="String" />
+                    <asp:Parameter Name="NeckMaterial" Type="String" />
+                    <asp:Parameter Name="Pickups" Type="String" />
+                    <asp:Parameter Name="BodyStyle" Type="String" />
+                    <asp:Parameter Name="GuitarID" Type="Int32" />
+                </UpdateParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="50px" Width="125px" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
-                <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="sql_GuitarData" Height="50px" Width="309px" AllowPaging="True" DataKeyNames="GuitarID">
                 <Fields>
+                    <asp:BoundField DataField="GuitarID" HeaderText="GuitarID" SortExpression="GuitarID" InsertVisible="False" ReadOnly="True" />
                     <asp:BoundField DataField="GuitarModel" HeaderText="GuitarModel" SortExpression="GuitarModel" />
                     <asp:BoundField DataField="GuitarBrand" HeaderText="GuitarBrand" SortExpression="GuitarBrand" />
                     <asp:BoundField DataField="YearIntroduced" HeaderText="YearIntroduced" SortExpression="YearIntroduced" />
@@ -26,15 +52,13 @@
                     <asp:BoundField DataField="UsedBy" HeaderText="UsedBy" SortExpression="UsedBy" />
                     <asp:BoundField DataField="BodyMaterial" HeaderText="BodyMaterial" SortExpression="BodyMaterial" />
                     <asp:BoundField DataField="NeckMaterial" HeaderText="NeckMaterial" SortExpression="NeckMaterial" />
+                    <asp:BoundField DataField="Pickups" HeaderText="Pickups" SortExpression="Pickups" />
                     <asp:BoundField DataField="BodyStyle" HeaderText="BodyStyle" SortExpression="BodyStyle" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Fields>
-                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
-                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
             </asp:DetailsView>
     </div>
-    </form>
+
 </body>
 </html>
 </asp:Content>

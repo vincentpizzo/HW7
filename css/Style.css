@@ -52,3 +52,12 @@ ul {background: gray;
     padding: 5px;
     border-radius: 20px;
 }
+
+#DetailsView1 { background: #FFCA10;
+                color: black;
+
+}
+
+#GridView1 { background: #86c1ed;
+             color: black;
+}
