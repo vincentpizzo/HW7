@@ -22,11 +22,11 @@
               
         <div id="menu">
             <ul id="nav">
-                <li><a href="ViewAll.aspx">Home</a>&nbsp; |&nbsp; </li>
+                <li><a href="HW7/ViewAll.aspx">Home</a>&nbsp; |&nbsp; </li>
                 <li><a href="Search.aspx">Search</a>&nbsp; |&nbsp; </li>
                 <li><a href="AboutUs.aspx">About Us</a>&nbsp; |&nbsp; </li>
                 <li><a href="ContactUs.aspx">Contact Us</a>&nbsp; |&nbsp; </li>
-                <li><a href="LogIn.aspx">Log In</a></li>
+                <li><a href="Login/Login.aspx">Log In</a></li>
             </ul>
         </div>
 
