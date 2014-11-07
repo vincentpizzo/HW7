@@ -10,7 +10,9 @@ h1 { text-align: center;
      border-radius: 20px;
 }
 
-p { background: white;
+p { background: #99CCFF;
+    border: solid;
+    border-color: white;
     padding: 30px;
     border-radius: 20px;
 
@@ -53,11 +55,15 @@ ul {background: gray;
     border-radius: 20px;
 }
 
-#DetailsView1 { background: #86c1ed;
+#DetailsView1 { background: #99CCFF;
                 color: black;
 
 }
 
-#GridView1 { background: #86c1ed;
+#GridView1 { background: #99CCFF;
+             color: black;
+}
+
+#FormView2 { background: #99CCFF;
              color: black;
 }

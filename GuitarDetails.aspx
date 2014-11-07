@@ -45,18 +45,18 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="sql_GuitarData" Height="50px" Width="309px" AllowPaging="True" DataKeyNames="GuitarID">
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="sql_GuitarData" Height="50px" Width="309px" AllowPaging="True" DataKeyNames="GuitarID" BackColor="#99CCFF" BorderColor="#0066FF">
+                <AlternatingRowStyle BackColor="#CCCCCC" />
                 <Fields>
-                    <asp:BoundField DataField="GuitarID" HeaderText="GuitarID" SortExpression="GuitarID" InsertVisible="False" ReadOnly="True" />
-                    <asp:BoundField DataField="GuitarModel" HeaderText="GuitarModel" SortExpression="GuitarModel" />
-                    <asp:BoundField DataField="GuitarBrand" HeaderText="GuitarBrand" SortExpression="GuitarBrand" />
-                    <asp:BoundField DataField="YearIntroduced" HeaderText="YearIntroduced" SortExpression="YearIntroduced" />
+                    <asp:BoundField DataField="GuitarModel" HeaderText="Guitar Model" SortExpression="GuitarModel" />
+                    <asp:BoundField DataField="GuitarBrand" HeaderText="Brand" SortExpression="GuitarBrand" />
+                    <asp:BoundField DataField="YearIntroduced" HeaderText="Year Introduced" SortExpression="YearIntroduced" />
                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                    <asp:BoundField DataField="UsedBy" HeaderText="UsedBy" SortExpression="UsedBy" />
-                    <asp:BoundField DataField="BodyMaterial" HeaderText="BodyMaterial" SortExpression="BodyMaterial" />
-                    <asp:BoundField DataField="NeckMaterial" HeaderText="NeckMaterial" SortExpression="NeckMaterial" />
+                    <asp:BoundField DataField="UsedBy" HeaderText="Used By" SortExpression="UsedBy" />
+                    <asp:BoundField DataField="BodyMaterial" HeaderText="Body Material" SortExpression="BodyMaterial" />
+                    <asp:BoundField DataField="NeckMaterial" HeaderText="Neck Material" SortExpression="NeckMaterial" />
                     <asp:BoundField DataField="Pickups" HeaderText="Pickups" SortExpression="Pickups" />
-                    <asp:BoundField DataField="BodyStyle" HeaderText="BodyStyle" SortExpression="BodyStyle" />
+                    <asp:BoundField DataField="BodyStyle" HeaderText="Body Style" SortExpression="BodyStyle" />
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Fields>
             </asp:DetailsView>
