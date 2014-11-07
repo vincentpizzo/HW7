@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Guitars.master" AutoEventWireup="false" CodeFile="LogIn.aspx.vb" Inherits="LogIn" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Guitars.master" AutoEventWireup="false" CodeFile="Login.aspx.vb" Inherits="LogIn" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -13,6 +13,13 @@
 <body>
 
     <div>
+
+
+
+
+
+        <asp:Login ID="Login1" runat="server" BackColor="#99CCFF">
+        </asp:Login>
 
 
 
