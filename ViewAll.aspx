@@ -12,14 +12,15 @@
 </head>
 <body>
     <div>
-        <asp:SqlDataSource ID="sql_HW7" runat="server" ConnectionString="<%$ ConnectionStrings:msci3300_g7ConnectionString %>" SelectCommand="SELECT [GuitarModel], [GuitarBrand], [UsedBy], [Price], [YearIntroduced], [BodyMaterial], [NeckMaterial], [Pickups], [BodyStyle] FROM [vpizzo_HW7]"></asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="sql_HW7" AllowSorting="True">
+        <asp:SqlDataSource ID="sql_HW7" runat="server" ConnectionString="<%$ ConnectionStrings:db_vpizzo_HW7 %>" SelectCommand="SELECT * FROM [vpizzo_HW7]"></asp:SqlDataSource>
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="sql_HW7" AllowSorting="True" DataKeyNames="GuitarID">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="GuitarModel" HeaderText="Model" SortExpression="GuitarModel" />
+                <asp:BoundField DataField="GuitarModel" HeaderText="Guitar Model" SortExpression="GuitarModel" />
                 <asp:BoundField DataField="GuitarBrand" HeaderText="Brand" SortExpression="GuitarBrand" />
-                <asp:BoundField DataField="UsedBy" HeaderText="Used By" SortExpression="UsedBy" />
                 <asp:BoundField DataField="YearIntroduced" HeaderText="Year Introduced" SortExpression="YearIntroduced" />
+                <asp:BoundField DataField="UsedBy" HeaderText="Used By" SortExpression="UsedBy" />
+                <asp:HyperLinkField DataNavigateUrlFields="GuitarID" DataNavigateUrlFormatString="GuitarDetails.aspx?GuitarID={0}" Text="View" />
             </Columns>
         </asp:GridView>
     </div>
