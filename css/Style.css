@@ -19,11 +19,37 @@ p { background: white;
 a:link { text-align: center;
          color: white;
          font-weight: bold;
-         background: black;
-
 }
 
 a:visited { text-align: center;
             color: white;
             font-weight;
+}
+
+.validationError {color: red;
+                  font-weight: bold;
+}
+
+#footer { color: white;
+          left: 37%;
+          position: absolute;
+          bottom: 0;
+}
+
+#right-header { align-content: right;
+
+}
+
+li {display: inline;
+    text-align: center;
+
+}
+
+ul {background: gray;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 5px;
+    border-radius: 20px;
+
 }

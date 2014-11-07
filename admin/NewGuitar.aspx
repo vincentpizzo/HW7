@@ -1,23 +1,19 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="NewGuitar.aspx.vb" Inherits="GuitarDetails" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Guitars.master" AutoEventWireup="false" CodeFile="NewGuitar.aspx.vb" Inherits="admin_NewGuitar" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>Guitar Details</title>
+    <link href="~/css/style.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-                <h1>Famous Guitars from Rock History</h1>
 
-        <a href="Default.aspx">Home</a>&nbsp; |&nbsp; 
-        <a href="Search.aspx">Search</a>&nbsp; |&nbsp; 
-        <a href="AboutUs.aspx">About Us</a>&nbsp; |&nbsp; 
-        <a href="ContactUs.aspx">Contact Us</a>
-        <a href="LogIn.aspx">Log In</a>
-                <br />
-                <br />
+    <div>
+
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_vpizzo_HW7 %>" DeleteCommand="DELETE FROM [vpizzo_HW7] WHERE [GuitarID] = @GuitarID" InsertCommand="INSERT INTO [vpizzo_HW7] ([GuitarModel], [GuitarBrand], [YearIntroduced], [Price], [UsedBy], [BodyMaterial], [NeckMaterial], [Pickups], [BodyStyle]) VALUES (@GuitarModel, @GuitarBrand, @YearIntroduced, @Price, @UsedBy, @BodyMaterial, @NeckMaterial, @Pickups, @BodyStyle)" SelectCommand="SELECT * FROM [vpizzo_HW7]" UpdateCommand="UPDATE [vpizzo_HW7] SET [GuitarModel] = @GuitarModel, [GuitarBrand] = @GuitarBrand, [YearIntroduced] = @YearIntroduced, [Price] = @Price, [UsedBy] = @UsedBy, [BodyMaterial] = @BodyMaterial, [NeckMaterial] = @NeckMaterial, [Pickups] = @Pickups, [BodyStyle] = @BodyStyle WHERE [GuitarID] = @GuitarID">
                     <DeleteParameters>
                         <asp:Parameter Name="GuitarID" Type="Int32" />
@@ -47,21 +43,105 @@
                     </UpdateParameters>
                 </asp:SqlDataSource>
                 <br />
-                <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="GuitarID" DataSourceID="SqlDataSource1" Height="50px" Width="125px" DefaultMode="Insert">
-                    <Fields>
-                        <asp:BoundField DataField="GuitarModel" HeaderText="Model" SortExpression="GuitarModel" />
-                        <asp:BoundField DataField="GuitarBrand" HeaderText="Brand" SortExpression="GuitarBrand" />
-                        <asp:BoundField DataField="YearIntroduced" HeaderText="Year Introduced" SortExpression="YearIntroduced" />
-                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                        <asp:BoundField DataField="UsedBy" HeaderText="Used By" SortExpression="UsedBy" />
-                        <asp:BoundField DataField="BodyMaterial" HeaderText="Body Material" SortExpression="BodyMaterial" />
-                        <asp:BoundField DataField="NeckMaterial" HeaderText="Neck Material" SortExpression="NeckMaterial" />
-                        <asp:BoundField DataField="Pickups" HeaderText="Pickups" SortExpression="Pickups" />
-                        <asp:BoundField DataField="BodyStyle" HeaderText="Body Style" SortExpression="BodyStyle" />
-                        <asp:CommandField ShowInsertButton="True" />
-                    </Fields>
-                </asp:DetailsView>
+                <asp:FormView ID="FormView2" runat="server" DataKeyNames="GuitarID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
+                    <EditItemTemplate>
+                        
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <table>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Model:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_GuitarModel" runat="server" Text='<%# Bind("GuitarModel") %>' />
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:RequiredFieldValidator ID="rfv_Model" runat="server" ErrorMessage="Please enter the name of the new guitar model" CssClass="validationError" ControlToValidate="tb_GuitarModel"></asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Brand:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_GuitarBrand" runat="server" Text='<%# Bind("GuitarBrand") %>' />
+                                </td>
+                                  <td style="text-align: left;">
+                                    <asp:RequiredFieldValidator ID="rfv_Brand" runat="server" ErrorMessage="Please enter the brand of the new guitar model" CssClass="validationError" ControlToValidate="tb_GuitarBrand"></asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Year Introduced:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_YearIntroduced" runat="server" Text='<%# Bind("YearIntroduced") %>' />
+                                </td>
+                                  <td style="text-align: left;">
+                                    <asp:RequiredFieldValidator ID="rfv_Year" runat="server" ErrorMessage="Please enter the year that the new guitar was introduced" CssClass="validationError" ControlToValidate="tb_YearIntroduced"></asp:RequiredFieldValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Price:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_Price" runat="server" Text='<%# Bind("Price") %>' />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Used By:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_UsedBy" runat="server" Text='<%# Bind("UsedBy") %>' />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Body Material:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_BodyMaterial" runat="server" Text='<%# Bind("BodyMaterial") %>' />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Neck Material:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_NeckMaterial" runat="server" Text='<%# Bind("NeckMaterial") %>' />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right;">
+                                    Body Style:
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:TextBox ID="tb_BodyStyle" runat="server" Text='<%# Bind("BodyStyle") %>' />
+                                </td>
+                            </tr>
+                        </table>
+                            <tr>
+                                <td style="text-align: right;">
+                                    <asp:Button ID="btn_Insert" runat="server" CausesValidation="true" CommandName="Insert" Text="Insert" />
+                                </td>
+                                <td style="text-align: left;">
+                                    <asp:Button ID="btn_cancelInsert" runat="server" CausesValidation="false" CommandName="Cancel" Text="Cancel" />
+                                </td>
+
+                            </tr>
+
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                       
+                    </ItemTemplate>
+                </asp:FormView>
+                <br />
     </div>
-    </form>
+
 </body>
 </html>
+</asp:Content>
+

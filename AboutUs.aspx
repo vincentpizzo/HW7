@@ -1,26 +1,19 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="AboutUs.aspx.vb" Inherits="AboutUs" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Guitars.master" AutoEventWireup="false" CodeFile="AboutUs.aspx.vb" Inherits="AboutUs" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!DOCTYPE html>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>About Us</title>
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-           <div class="center">
-        <div class="header1">
-                <h1>Famous Guitars from Rock History</h1>
 
-        </div>
-               <a href="Default.aspx">Home</a>&nbsp; |&nbsp; 
-        <a href="Search.aspx">Search</a>&nbsp; |&nbsp; 
-        <a href="AboutUs.aspx">About Us</a>&nbsp; |&nbsp; 
-        <a href="ContactUs.aspx">Contact Us</a>
-        <a href="LogIn.aspx">Log In</a>
-    </div>
+
     <div>
     
             <div style="padding-right: 20%; padding-left: 20%">
@@ -35,6 +28,8 @@
     
     </div>
         <br />
-    </form>
+
 </body>
 </html>
+</asp:Content>
+

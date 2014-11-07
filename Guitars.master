@@ -1,0 +1,45 @@
+﻿<%@ Master Language="VB" CodeFile="Guitars.master.vb" Inherits="Guitars" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="./css/Style.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="container">
+            <div id="header">
+                <h1>Iconic Guitars from Rock History</h1>
+            </div>
+            <div id="right-header">
+                <img src="http://media-cache-ak0.pinimg.com/236x/80/bd/3f/80bd3f7f37ce8ca1b2a8617ce79aca95.jpg" style="height: 115px; width: 90px" />
+            </div>
+
+        <div id="menu">
+            <ul id="nav">
+                <li><a href="Default.aspx">Home</a>&nbsp; |&nbsp; </li>
+                <li><a href="Search.aspx">Search</a>&nbsp; |&nbsp; </li>
+                <li><a href="AboutUs.aspx">About Us</a>&nbsp; |&nbsp; </li>
+                <li><a href="ContactUs.aspx">Contact Us</a>&nbsp; |&nbsp; </li>
+                <li><a href="LogIn.aspx">Log In</a></li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="footer">
+            &copy; Vinnie Pizzo 2014 MSCI:3300 - Software Design and Development
+        </div>
+    </div>
+    </form>
+</body>
+</html>
